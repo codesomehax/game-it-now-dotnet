@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen(options =>
     options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()));
 
 builder.Services.AddScoped<CategoryRepository>();
+builder.Services.AddScoped<GameRepository>();
 
 var app = builder.Build();
 

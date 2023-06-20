@@ -18,4 +18,11 @@ public class CategoryRepository : Repository<Category>
             .Where(category => category.Name == name)
             .FirstOrDefaultAsync();
     }
+
+    public async Task<IEnumerable<Category>> FindAllByNameIn(IEnumerable<string> categoryNames)
+    {
+        return await DbSet
+            .Where(category => categoryNames.Contains(category.Name))
+            .ToListAsync();
+    }
 }

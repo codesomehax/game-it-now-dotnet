@@ -6,11 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4dfe346-549c-40bc-a28c-fa65715bc4e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/Repository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Model/Category.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Requests/Category/CategoryUpdateRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Model/Game.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Model/JoinTables/GameCategory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Requests/Game/GameAdditionRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Model/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +43,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -85,7 +90,10 @@
       <updated>1687002083600</updated>
       <workItem from="1687002087221" duration="5571000" />
       <workItem from="1687079712514" duration="10328000" />
-      <workItem from="1687102060614" duration="3385000" />
+      <workItem from="1687102060614" duration="3927000" />
+      <workItem from="1687193960738" duration="737000" />
+      <workItem from="1687205138100" duration="1124000" />
+      <workItem from="1687248945084" duration="962000" />
     </task>
     <servers />
   </component>

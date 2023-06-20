@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using GameItNowApi.Model.JoinTables;
 
 namespace GameItNowApi.Model;
 
@@ -9,4 +10,6 @@ public class Category
     public string Name { get; set; }
     [Required]
     public string Description { get; set; }
+    
+    public ICollection<GameCategory> Games { get; set; }
 }
