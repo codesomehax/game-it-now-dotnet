@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace GameItNowApi.Data.Repositories;
 
@@ -15,14 +14,14 @@ public abstract class Repository<T> where T : class
         DbSet = _context.Set<T>();
     }
 
-    public async Task<IEnumerable<T>> FindAll()
+    public async Task<IEnumerable<T>> FindAll(params string[]? includeProperties)
     {
-        return await DbSet.ToListAsync();
+        return await IncludeProperties(includeProperties).ToListAsync();
     }
 
-    public async Task<T?> Find(params object[]? id)
+    public async Task<T?> Find(int id, params string[]? includeProperties)
     {
-        return await DbSet.FindAsync(id);
+        return await IncludeProperties(includeProperties).FirstOrDefaultAsync(e => EF.Property<int>(e, "Id") == id);
     }
 
     public async Task<T> Add(T entity)
@@ -48,5 +47,18 @@ public abstract class Repository<T> where T : class
     protected async Task<int> SaveChanges()
     {
         return await _context.SaveChangesAsync();
+    }
+
+    protected IQueryable<T> IncludeProperties(string[]? includeProperties)
+    {
+        IQueryable<T> entities = DbSet;
+
+        if (includeProperties != null)
+            foreach (string property in includeProperties)
+            {
+                entities = entities.Include(property);
+            }
+
+        return entities;
     }
 }

@@ -1,15 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using GameItNowApi.Model.JoinTables;
 
-namespace GameItNowApi.Model;
+namespace GameItNowApi.Data.Model;
 
 public class Category
 {
+    [Key]
     public int Id { get; set; }
-    [Required]
     public string Name { get; set; }
-    [Required]
     public string Description { get; set; }
     
-    public ICollection<GameCategory> Games { get; set; }
+    public ICollection<Game> Games { get; set; }
 }

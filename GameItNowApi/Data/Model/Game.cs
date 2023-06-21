@@ -1,10 +1,10 @@
-﻿using GameItNowApi.Model.JoinTables;
-using Microsoft.Build.Framework;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameItNowApi.Model;
+namespace GameItNowApi.Data.Model;
 
 public class Game
 {
+    [Key]
     public int Id { get; set; }
     [Required]
     public string Name { get; set; }
@@ -15,5 +15,5 @@ public class Game
     [Required]
     public string ImageUrl { get; set; }
 
-    public ICollection<GameCategory> Categories { get; set; }
+    public ICollection<Category> Categories { get; set; }
 }

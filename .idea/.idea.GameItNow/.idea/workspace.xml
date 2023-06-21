@@ -6,14 +6,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4dfe346-549c-40bc-a28c-fa65715bc4e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Model/Game.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Model/JoinTables/GameCategory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Requests/Game/GameAdditionRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Dto/CategoryDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Dto/GameDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/CategoryProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/GameProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Requests/Category/CategoryAdditionRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Requests/Game/GamePatchRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/CategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Model/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Model/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Model/JoinTables/GameCategory.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +31,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5e89c891bbcc4eaba85a9fa3da9c805a3adc98/24/9bced7c8/IQueryable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5e89c891bbcc4eaba85a9fa3da9c805a3adc98/2c/53745a82/IQueryable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/829d6ac6e62b9bee9ef8e79e827d87d0c31a7c2eefbc354135d9a8f2c4deb/Mapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9daeeaab8409865442b5e80e634dc64dae9a14892fe81e0f17b46f51b2c48f8/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameItNowApi/Data/Repositories/Repository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -93,7 +105,9 @@
       <workItem from="1687102060614" duration="3927000" />
       <workItem from="1687193960738" duration="737000" />
       <workItem from="1687205138100" duration="1124000" />
-      <workItem from="1687248945084" duration="962000" />
+      <workItem from="1687248945084" duration="12466000" />
+      <workItem from="1687289200258" duration="1301000" />
+      <workItem from="1687335865915" duration="930000" />
     </task>
     <servers />
   </component>

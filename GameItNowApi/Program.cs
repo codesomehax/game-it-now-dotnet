@@ -12,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options => 
     options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()));
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<CategoryRepository>();
 builder.Services.AddScoped<GameRepository>();

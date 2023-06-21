@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Net.Mime;
-using System.Threading.Tasks;
+using AutoMapper;
+using GameItNowApi.Data.Dto;
+using GameItNowApi.Data.Model;
 using GameItNowApi.Data.Repositories;
-using GameItNowApi.Model;
 using GameItNowApi.Requests.Category;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameItNowApi.Controllers;
@@ -17,21 +12,23 @@ namespace GameItNowApi.Controllers;
 public class CategoryController : ControllerBase
 {
     private readonly CategoryRepository _categoryRepository;
+    private readonly IMapper _mapper;
 
-    public CategoryController(CategoryRepository categoryRepository)
+    public CategoryController(CategoryRepository categoryRepository, IMapper mapper)
     {
         _categoryRepository = categoryRepository;
+        _mapper = mapper;
     }
 
     [HttpGet]
     public async Task<IActionResult> FindAll(string? name)
     {
         if (name == null)
-            return Ok(await _categoryRepository.FindAll());
+            return Ok(_mapper.Map<IEnumerable<CategoryDto>>(await _categoryRepository.FindAll()));
         
         Category? category = await _categoryRepository.FindByName(name);
     
-        return category == null ? NotFound() : Ok(category);
+        return category == null ? NotFound() : Ok(_mapper.Map<CategoryDto>(category));
 
     }
 
@@ -40,18 +37,25 @@ public class CategoryController : ControllerBase
     {
         Category? category = await _categoryRepository.Find(id);
 
-        return category == null ? NotFound() : Ok(category);
+        return category == null ? NotFound() : Ok(_mapper.Map<CategoryDto>(category));
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddCategory(Category category)
+    public async Task<IActionResult> AddCategory(CategoryAdditionRequest additionRequest)
     {
-        if (await _categoryRepository.ExistsByName(category.Name))
+        if (await _categoryRepository.ExistsByName(additionRequest.Name))
             return BadRequest();
-        
-        Category addedCategory = await _categoryRepository.Add(category);
 
-        return CreatedAtAction(nameof(FindById), new { id = addedCategory.Id }, addedCategory);
+        Category categoryToAdd = _mapper.Map<Category>(additionRequest);
+        
+        Category addedCategory = await _categoryRepository.Add(categoryToAdd);
+
+        return CreatedAtAction
+        (
+            nameof(FindById), 
+            new { id = addedCategory.Id }, 
+            _mapper.Map<CategoryDto>(addedCategory)
+        );
     }
 
     [HttpPut("{id:int}")]
@@ -62,7 +66,7 @@ public class CategoryController : ControllerBase
         if (categoryToUpdate == null)
             return NotFound();
 
-        if (updateRequest.Name != null)
+        if (!string.IsNullOrEmpty(updateRequest.Name))
         {
             if (await _categoryRepository.ExistsByName(updateRequest.Name))
                 return BadRequest();
@@ -70,7 +74,7 @@ public class CategoryController : ControllerBase
             categoryToUpdate.Name = updateRequest.Name;
         }
 
-        if (updateRequest.Description != null)
+        if (!string.IsNullOrEmpty(updateRequest.Description))
             categoryToUpdate.Description = updateRequest.Description;
 
         await _categoryRepository.Update(categoryToUpdate);
