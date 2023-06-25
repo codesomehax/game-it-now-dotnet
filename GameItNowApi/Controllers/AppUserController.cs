@@ -34,10 +34,10 @@ public class AppUserController : ControllerBase
             return appUser == null ? NotFound() : Ok(_mapper.Map<AppUserDto>(appUser));
         }
 
-        return Ok(_mapper.Map<AppUserDto>(await _appUserRepository.FindAll()));
+        return Ok(_mapper.Map<IEnumerable<AppUserDto>>(await _appUserRepository.FindAll()));
     }
 
-    [HttpGet("{id:int}")]
+    [HttpGet("{id:int}", Name = "FindUserById")]
     public async Task<IActionResult> FindById(int id)
     {
         AppUser? appUser = await _appUserRepository.Find(id);

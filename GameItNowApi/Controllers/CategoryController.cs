@@ -2,7 +2,8 @@ using AutoMapper;
 using GameItNowApi.Data.Dto;
 using GameItNowApi.Data.Model;
 using GameItNowApi.Data.Repositories;
-using GameItNowApi.Requests.Category;
+using GameItNowApi.Data.Requests.Category;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameItNowApi.Controllers;
@@ -41,6 +42,7 @@ public class CategoryController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> AddCategory(CategoryAdditionRequest additionRequest)
     {
         if (await _categoryRepository.ExistsByName(additionRequest.Name))
@@ -59,6 +61,7 @@ public class CategoryController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateCategory(int id, CategoryUpdateRequest updateRequest)
     {
         Category? categoryToUpdate = await _categoryRepository.Find(id);
@@ -83,6 +86,7 @@ public class CategoryController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> RemoveCategory(int id)
     {
         Category? categoryToUpdate = await _categoryRepository.Find(id);

@@ -3,7 +3,8 @@ using AutoMapper;
 using GameItNowApi.Data.Dto;
 using GameItNowApi.Data.Model;
 using GameItNowApi.Data.Repositories;
-using GameItNowApi.Requests.Game;
+using GameItNowApi.Data.Requests.Game;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameItNowApi.Controllers;
@@ -52,6 +53,7 @@ public class GameController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> AddGame(GameAdditionRequest additionRequest)
     {
         if (await _gameRepository.ExistsByName(additionRequest.Name))
@@ -77,6 +79,7 @@ public class GameController : ControllerBase
     }
 
     [HttpPatch("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> PatchGame(int id, GamePatchRequest patchRequest)
     {
         Game? gameToPatch = await _gameRepository.Find(id);
@@ -115,6 +118,7 @@ public class GameController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> RemoveGame(int id)
     {
         Game? game = await _gameRepository.Find(id);

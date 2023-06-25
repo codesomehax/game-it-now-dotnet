@@ -1,4 +1,4 @@
-﻿namespace GameItNowApi.Requests.Game;
+﻿namespace GameItNowApi.Data.Requests.Game;
 
 public class GamePatchRequest
 {

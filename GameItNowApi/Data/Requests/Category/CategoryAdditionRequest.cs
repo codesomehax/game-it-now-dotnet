@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameItNowApi.Requests.Category;
+namespace GameItNowApi.Data.Requests.Category;
 
 public class CategoryAdditionRequest
 {

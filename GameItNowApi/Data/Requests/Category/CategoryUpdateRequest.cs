@@ -1,4 +1,4 @@
-﻿namespace GameItNowApi.Requests.Category;
+﻿namespace GameItNowApi.Data.Requests.Category;
 
 public class CategoryUpdateRequest
 {

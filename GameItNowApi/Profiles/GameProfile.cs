@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GameItNowApi.Data.Dto;
 using GameItNowApi.Data.Model;
-using GameItNowApi.Requests.Game;
+using GameItNowApi.Data.Requests.Game;
 
 namespace GameItNowApi.Profiles;
 

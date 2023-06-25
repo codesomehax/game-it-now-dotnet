@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameItNowApi.Requests.Game;
+namespace GameItNowApi.Data.Requests.Game;
 
 public class GameAdditionRequest
 {
