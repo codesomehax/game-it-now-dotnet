@@ -6,24 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4dfe346-549c-40bc-a28c-fa65715bc4e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Dto/CategoryDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Dto/GameDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/CategoryProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/GameProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Requests/Category/CategoryAdditionRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Requests/Game/GamePatchRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Dto/AppUserDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/AppUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/AppUserRole.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/AppUserRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/AppUserProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/Repository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Model/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Model/JoinTables/GameCategory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Model/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/Game.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +96,8 @@
       <workItem from="1687205138100" duration="1124000" />
       <workItem from="1687248945084" duration="12466000" />
       <workItem from="1687289200258" duration="1301000" />
-      <workItem from="1687335865915" duration="930000" />
+      <workItem from="1687335865915" duration="3090000" />
+      <workItem from="1687360890815" duration="851000" />
     </task>
     <servers />
   </component>
