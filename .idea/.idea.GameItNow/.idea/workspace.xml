@@ -6,24 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4dfe346-549c-40bc-a28c-fa65715bc4e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Requests/AppUser/AppUserRegistrationRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Requests/Authentication/AuthenticationRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameItNowApi/Data/Responses/AuthenticationResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/AppUserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/AppUserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Dto/AppUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Dto/AppUserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Model/AppUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/AppUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Model/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Profiles/AppUserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/AppUserProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Profiles/CategoryProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/CategoryProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Profiles/GameProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/GameProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Requests/Category/CategoryAdditionRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Requests/Category/CategoryAdditionRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Requests/Category/CategoryUpdateRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Requests/Category/CategoryUpdateRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Requests/Game/GameAdditionRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Requests/Game/GameAdditionRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Requests/Game/GamePatchRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Requests/Game/GamePatchRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +107,7 @@
       <workItem from="1687289200258" duration="1301000" />
       <workItem from="1687335865915" duration="3090000" />
       <workItem from="1687360890815" duration="851000" />
-      <workItem from="1687678475974" duration="11154000" />
+      <workItem from="1687678475974" duration="14957000" />
     </task>
     <servers />
   </component>

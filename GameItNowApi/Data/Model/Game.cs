@@ -16,5 +16,6 @@ public class Game
     public string ImageUrl { get; set; }
 
     public ICollection<Category> Categories { get; set; }
-    public ICollection<AppUser> AppUsers { get; set; }
+    public ICollection<AppUser> AppUsersOwning { get; set; }
+    public ICollection<AppUser> InCartOfAppUsers { get; set; }
 }

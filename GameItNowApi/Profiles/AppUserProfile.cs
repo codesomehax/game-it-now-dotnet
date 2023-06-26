@@ -15,7 +15,7 @@ public class AppUserProfile : Profile
                 opt => opt.MapFrom(user => user.Role.ToString()))
             .ForMember(
                 dto => dto.Games,
-                opt => opt.MapFrom(user => user.Games.Select(g => g.Name)));
+                opt => opt.MapFrom(user => user.OwnedGames.Select(g => g.Name)));
         
         CreateMap<AppUserRegistrationRequest, AppUser>()
             .ForMember(
@@ -28,7 +28,7 @@ public class AppUserProfile : Profile
                 appUser => appUser.Role,
                 opt => opt.MapFrom(request => AppUserRole.User))
             .ForMember(
-                appUser => appUser.Games,
+                appUser => appUser.OwnedGames,
                 opt => opt.MapFrom(request => new List<Game>()));
     }
 }

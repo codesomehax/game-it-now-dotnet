@@ -8,5 +8,6 @@ public class AppUser
     public string Email { get; set; }
     public AppUserRole Role { get; set; }
     
-    public ICollection<Game> Games { get; set; }
+    public ICollection<Game> OwnedGames { get; set; }
+    public ICollection<Game> Cart { get; set; }
 }

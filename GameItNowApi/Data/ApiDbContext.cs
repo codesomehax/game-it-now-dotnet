@@ -12,24 +12,16 @@ public class ApiDbContext : DbContext
     {
     }
 
-    // protected override void OnModelCreating(ModelBuilder modelBuilder)
-    // {
-    //     // modelBuilder.Entity<GameCategory>()
-    //     //     .HasKey(gameCategory => new { gameCategory.GameId, gameCategory.Category });
-    //     //
-    //     // modelBuilder.Entity<GameCategory>()
-    //     //     .HasOne(gameCategory => gameCategory.Game)
-    //     //     .WithMany(game => game.GameCategories)
-    //     //     .HasForeignKey(gameCategory => gameCategory.GameId);
-    //     //
-    //     // modelBuilder.Entity<GameCategory>()
-    //     //     .HasOne(gameCategory => gameCategory.Category)
-    //     //     .WithMany(category => category.GameCategories)
-    //     //     .HasForeignKey(gameCategory => gameCategory.CategoryId);
-    //
-    //     modelBuilder.Entity<Game>()
-    //         .HasMany(g => g.Categories)
-    //         .WithMany(c => c.Games)
-    //         .UsingEntity(j => j.);
-    // }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Game>()
+            .HasMany(g => g.InCartOfAppUsers)
+            .WithMany(u => u.Cart)
+            .UsingEntity("Carts");
+
+        modelBuilder.Entity<Game>()
+            .HasMany(g => g.AppUsersOwning)
+            .WithMany(u => u.OwnedGames)
+            .UsingEntity("OwnedGames");
+    }
 }

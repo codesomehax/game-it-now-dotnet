@@ -44,4 +44,12 @@ public class AppUserController : ControllerBase
 
         return appUser == null ? NotFound() : Ok(_mapper.Map<AppUserDto>(appUser));
     }
+
+    [HttpGet("{id:int}/library")]
+    public async Task<IActionResult> FindLibraryById(int id)
+    {
+        AppUser? appUser = await _appUserRepository.Find(id, "OwnedGames");
+
+        return appUser == null ? NotFound() : Ok(_mapper.Map<GameDto>(appUser.OwnedGames));
+    }
 }
