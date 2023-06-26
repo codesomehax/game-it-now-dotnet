@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using AutoMapper;
+using GameItNowApi.Data.Dto;
 using GameItNowApi.Data.Model;
 using GameItNowApi.Data.Repositories;
 using Microsoft.AspNetCore.Authorization;
@@ -12,38 +14,43 @@ using NuGet.Packaging;
 
 namespace GameItNowApi.Controllers;
 
-[Route("carts")]
+[Route("users/{userId:int}/cart")]
 [ApiController]
 public class CartController : ControllerBase
 {
     private readonly AppUserRepository _appUserRepository;
     private readonly GameRepository _gameRepository;
+    private readonly IMapper _mapper;
 
-    public CartController(AppUserRepository appUserRepository, GameRepository gameRepository)
+    public CartController(AppUserRepository appUserRepository, GameRepository gameRepository, IMapper mapper)
     {
         _appUserRepository = appUserRepository;
         _gameRepository = gameRepository;
+        _mapper = mapper;
     }
 
-    [HttpGet("{id:int}")]
+    [HttpGet]
     [Authorize]
-    public async Task<IActionResult> FindCartById(int id)
+    public async Task<IActionResult> FindCartByUserId(int userId)
     {
-        AppUser? appUser = await _appUserRepository.Find(id, "Cart");
+        AppUser? appUser = await _appUserRepository.Find(userId, "Cart");
 
-        return appUser == null ? NotFound() : Ok(appUser.Cart);
+        if (appUser == null)
+            return NotFound();
+
+        return Ok(_mapper.Map<IEnumerable<GameDto>>(await _gameRepository.FindCartByAppUserId(userId, "Categories")));
     }
 
-    [HttpPost("{cartId:int}")]
+    [HttpPost]
     [Authorize]
-    public async Task<IActionResult> AddGameToCart(int cartId, int gameId)
+    public async Task<IActionResult> AddGameToCart(int userId, int gameId)
     {
         AppUser? currentUser = await GetCurrentUser("Cart", "OwnedGames");
 
         if (currentUser == null)
             return Unauthorized();
 
-        if (currentUser.Id != cartId)
+        if (currentUser.Id != userId)
             return Forbid();
 
         if (currentUser.OwnedGames.Any(g => g.Id == gameId))
@@ -63,17 +70,25 @@ public class CartController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{cartId:int}")]
+    [HttpDelete]
     [Authorize]
-    public async Task<IActionResult> RemoveGameFromCart(int cartId, int gameId)
+    public async Task<IActionResult> RemoveGameFromCartOrClearCart(int userId, int? gameId)
     {
         AppUser? currentUser = await GetCurrentUser("Cart");
 
         if (currentUser == null)
             return Unauthorized();
 
-        if (currentUser.Id != cartId)
+        if (currentUser.Id != userId)
             return Forbid();
+
+        if (gameId == null)
+        {
+            currentUser.Cart.Clear();
+            await _appUserRepository.Update(currentUser);
+
+            return NoContent();
+        }
 
         Game? gameToRemove = currentUser.Cart.FirstOrDefault(g => g.Id == gameId);
 
@@ -86,34 +101,16 @@ public class CartController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{id:int}")]
+    [HttpPost("buy")]
     [Authorize]
-    public async Task<IActionResult> ClearCartById(int id)
-    {
-        AppUser? currentUser = await GetCurrentUser("Cart");
-
-        if (currentUser == null)
-            return Unauthorized();
-
-        if (currentUser.Id != id)
-            return Forbid();
-        
-        currentUser.Cart.Clear();
-        await _appUserRepository.Update(currentUser);
-
-        return NoContent();
-    }
-
-    [HttpPost("{id:int}/buy")]
-    [Authorize]
-    public async Task<IActionResult> BuyGamesById(int id)
+    public async Task<IActionResult> BuyGamesById(int userId)
     {
         AppUser? currentUser = await GetCurrentUser("Cart", "OwnedGames");
 
         if (currentUser == null)
             return Unauthorized();
 
-        if (currentUser.Id != id)
+        if (currentUser.Id != userId)
             return Forbid();
 
         if (currentUser.Cart.Count == 0)

@@ -20,10 +20,6 @@
 
     <ItemGroup>
       <Folder Include="Data\Model\JoinTables" />
-      <Folder Include="Requests\AppUser" />
-      <Folder Include="Requests\Authentication" />
-      <Folder Include="Requests\Category" />
-      <Folder Include="Requests\Game" />
     </ItemGroup>
 
 </Project>

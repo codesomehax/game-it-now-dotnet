@@ -38,7 +38,7 @@ public class GameController : ControllerBase
 
         if (category != null)
         {
-            return Ok(_mapper.Map<GameDto>(await _gameRepository.FindAllContainingCategory(category, "Categories")));
+            return Ok(_mapper.Map<IEnumerable<GameDto>>(await _gameRepository.FindAllContainingCategory(category, "Categories")));
         }
         
         return Ok(_mapper.Map<IEnumerable<GameDto>>(await _gameRepository.FindAll("Categories")));

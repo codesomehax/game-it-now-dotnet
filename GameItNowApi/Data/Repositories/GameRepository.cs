@@ -26,4 +26,11 @@ public class GameRepository : Repository<Game>
             .Where(g => g.Categories.Any(c => c.Name == categoryName))
             .ToListAsync();
     }
+
+    public async Task<IEnumerable<Game>> FindCartByAppUserId(int appUserId, params string[]? includeProperties)
+    {
+        return await IncludeProperties(includeProperties)
+            .Where(g => g.InCartOfAppUsers.Any(user => user.Id == appUserId))
+            .ToListAsync();
+    }
 }

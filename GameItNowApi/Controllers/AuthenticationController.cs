@@ -19,7 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace GameItNowApi.Controllers;
 
-[Route("")]
+[Route("users/auth")]
 [ApiController]
 public class AuthenticationController : ControllerBase
 {
@@ -34,7 +34,7 @@ public class AuthenticationController : ControllerBase
         _mapper = mapper;
     }
     
-    [HttpPost("authenticate")]
+    [HttpPost("login")]
     [AllowAnonymous]
     public async Task<IActionResult> Authenticate(AuthenticationRequest authenticationRequest)
     {
@@ -50,7 +50,7 @@ public class AuthenticationController : ControllerBase
 
         string token = GenerateToken(appUser);
 
-        return Ok(new AuthenticationResponse(token));
+        return Ok(new AuthenticationResponse(token, _mapper.Map<AppUserDto>(appUser)));
     }
     
     [HttpPost("register")]
@@ -81,9 +81,9 @@ public class AuthenticationController : ControllerBase
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
         
         Claim[] claims = {
-            new Claim(ClaimTypes.NameIdentifier, appUser.Username),
-            new Claim(ClaimTypes.Email, appUser.Email),
-            new Claim(ClaimTypes.Role, appUser.Role.ToString())
+            new(ClaimTypes.NameIdentifier, appUser.Username),
+            new(ClaimTypes.Email, appUser.Email),
+            new(ClaimTypes.Role, appUser.Role.ToString())
         };
 
         JwtSecurityToken token = new JwtSecurityToken(

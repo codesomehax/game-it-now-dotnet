@@ -10,10 +10,6 @@ public class CategoryProfile : Profile
     public CategoryProfile()
     {
         CreateMap<Category, CategoryDto>();
-        CreateMap<CategoryAdditionRequest, Category>()
-            .ForMember(
-                c => c.Games,
-                opt => opt.MapFrom(car => new List<Game>())
-            );
+        CreateMap<CategoryAdditionRequest, Category>();
     }
 }

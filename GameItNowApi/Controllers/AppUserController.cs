@@ -27,14 +27,13 @@ public class AppUserController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> FindAllOrByUsername(string? username)
     {
-        if (username != null)
-        {
-            AppUser? appUser = await _appUserRepository.FindByUsername(username);
+        if (username == null) 
+            return Ok(_mapper.Map<IEnumerable<AppUserDto>>(await _appUserRepository.FindAll()));
+        
+        AppUser? appUser = await _appUserRepository.FindByUsername(username);
 
-            return appUser == null ? NotFound() : Ok(_mapper.Map<AppUserDto>(appUser));
-        }
+        return appUser == null ? NotFound() : Ok(_mapper.Map<AppUserDto>(appUser));
 
-        return Ok(_mapper.Map<IEnumerable<AppUserDto>>(await _appUserRepository.FindAll()));
     }
 
     [HttpGet("{id:int}", Name = "FindUserById")]
@@ -50,6 +49,6 @@ public class AppUserController : ControllerBase
     {
         AppUser? appUser = await _appUserRepository.Find(id, "OwnedGames");
 
-        return appUser == null ? NotFound() : Ok(_mapper.Map<GameDto>(appUser.OwnedGames));
+        return appUser == null ? NotFound() : Ok(_mapper.Map<IEnumerable<GameDto>>(appUser.OwnedGames));
     }
 }

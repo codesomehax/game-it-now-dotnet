@@ -4,14 +4,27 @@
     <projectFile profileName="GameItNowApi">GameItNowApi/GameItNowApi.csproj</projectFile>
     <projectFile profileName="IIS Express">GameItNowApi/GameItNowApi.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c4dfe346-549c-40bc-a28c-fa65715bc4e9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/AppUserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/AppUserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/ApiDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Model/AppUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/AppUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Model/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Model/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/AuthenticationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/CartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Responses/AuthenticationResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Responses/AuthenticationResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Profiles/AppUserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/AppUserProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Profiles/CategoryProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/CategoryProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +53,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="2RKcBvSKZp4vB3CvmC7h3ylJBaD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -53,9 +66,20 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/home/codesomehax/.config/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,
+      &quot;/home/codesomehax/.config/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,
+      &quot;/home/codesomehax/.local/share/Symbols/src&quot;
+    ]
   }
 }</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.GameItNowApi">
@@ -108,6 +132,9 @@
       <workItem from="1687335865915" duration="3090000" />
       <workItem from="1687360890815" duration="851000" />
       <workItem from="1687678475974" duration="14957000" />
+      <workItem from="1687767744308" duration="340000" />
+      <workItem from="1687779521533" duration="5011000" />
+      <workItem from="1687803011220" duration="1970000" />
     </task>
     <servers />
   </component>
