@@ -12,10 +12,10 @@ namespace GameItNowApi.Controllers;
 [ApiController]
 public class CategoryController : ControllerBase
 {
-    private readonly CategoryRepository _categoryRepository;
+    private readonly ICategoryRepository _categoryRepository;
     private readonly IMapper _mapper;
 
-    public CategoryController(CategoryRepository categoryRepository, IMapper mapper)
+    public CategoryController(ICategoryRepository categoryRepository, IMapper mapper)
     {
         _categoryRepository = categoryRepository;
         _mapper = mapper;
@@ -46,7 +46,7 @@ public class CategoryController : ControllerBase
     public async Task<IActionResult> AddCategory(CategoryAdditionRequest additionRequest)
     {
         if (await _categoryRepository.ExistsByName(additionRequest.Name))
-            return BadRequest();
+            return Conflict();
 
         Category categoryToAdd = _mapper.Map<Category>(additionRequest);
         
@@ -71,8 +71,9 @@ public class CategoryController : ControllerBase
 
         if (!string.IsNullOrEmpty(updateRequest.Name))
         {
-            if (await _categoryRepository.ExistsByName(updateRequest.Name))
-                return BadRequest();
+            Category? optionalDuplicate = await _categoryRepository.FindByName(updateRequest.Name);
+            if (optionalDuplicate != null && optionalDuplicate.Id != categoryToUpdate.Id)
+                return Conflict();
             
             categoryToUpdate.Name = updateRequest.Name;
         }

@@ -9,21 +9,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4dfe346-549c-40bc-a28c-fa65715bc4e9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/projectSettingsUpdater.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowUnitTests/Controllers/AppUserControllerTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowUnitTests/Controllers/AuthenticationControllerTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowUnitTests/Controllers/CartControllerTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowUnitTests/Controllers/GameControllerTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameItNowUnitTests/Stubs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameItNow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNow.sln" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNow.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/AppUserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/AppUserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/AuthenticationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/CartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/CategoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/AppUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/AppUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/CategoryRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/GameRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Responses/AuthenticationResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Responses/AuthenticationResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/GameItNowApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Profiles/AppUserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/AppUserProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameItNowApi/Profiles/CategoryProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Profiles/CategoryProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Data/Repositories/Repository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameItNowApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameItNowApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -134,12 +135,47 @@
       <workItem from="1687678475974" duration="14957000" />
       <workItem from="1687767744308" duration="340000" />
       <workItem from="1687779521533" duration="5011000" />
-      <workItem from="1687803011220" duration="1970000" />
+      <workItem from="1687803011220" duration="4845000" />
+      <workItem from="1687810570970" duration="8243000" />
+      <workItem from="1687844194437" duration="10970000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="306" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 77% 234/1032" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 77% 234/1032" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="GameItNowApi 57% 227/526" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 77% 234/1032" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="GameItNowApi 57% 227/526" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="GameItNowApi 57% 227/526" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 77% 234/1032" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="GameItNowApi 57% 227/526" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="GameItNowApi 57% 227/526" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Controllers 98% 4/232" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
@@ -156,6 +192,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/GameItNowUnitTests/Controllers/CartControllerTest.cs</url>
+          <line>220</line>
+          <properties documentPath="$PROJECT_DIR$/GameItNowUnitTests/Controllers/CartControllerTest.cs" initialLine="220" containingFunctionPresentation="Method 'RemoveGameFromCartOrClearCart_DifferentUserIds'">
+            <startOffsets>
+              <option value="6169" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6197" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

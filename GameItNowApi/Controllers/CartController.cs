@@ -18,11 +18,11 @@ namespace GameItNowApi.Controllers;
 [ApiController]
 public class CartController : ControllerBase
 {
-    private readonly AppUserRepository _appUserRepository;
-    private readonly GameRepository _gameRepository;
+    private readonly IAppUserRepository _appUserRepository;
+    private readonly IGameRepository _gameRepository;
     private readonly IMapper _mapper;
 
-    public CartController(AppUserRepository appUserRepository, GameRepository gameRepository, IMapper mapper)
+    public CartController(IAppUserRepository appUserRepository, IGameRepository gameRepository, IMapper mapper)
     {
         _appUserRepository = appUserRepository;
         _gameRepository = gameRepository;

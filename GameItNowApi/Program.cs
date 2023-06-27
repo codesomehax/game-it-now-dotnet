@@ -55,18 +55,18 @@ public static class Program
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
             options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
         });
-        services.AddScoped<CategoryRepository>();
-        services.AddScoped<GameRepository>();
-        services.AddScoped<AppUserRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<IGameRepository, GameRepository>();
+        services.AddScoped<IAppUserRepository, AppUserRepository>();
     }
 
     private static async void InitializeDatabase(IServiceProvider serviceProvider)
     {
         using var scope = serviceProvider.CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<ApiDbContext>();
-        var categoryRepository = scope.ServiceProvider.GetRequiredService<CategoryRepository>();
-        var gameRepository = scope.ServiceProvider.GetRequiredService<GameRepository>();
-        var appUserRepository = scope.ServiceProvider.GetRequiredService<AppUserRepository>();
+        var categoryRepository = scope.ServiceProvider.GetRequiredService<ICategoryRepository>();
+        var gameRepository = scope.ServiceProvider.GetRequiredService<IGameRepository>();
+        var appUserRepository = scope.ServiceProvider.GetRequiredService<IAppUserRepository>();
 
         Category rpg = new Category
         {

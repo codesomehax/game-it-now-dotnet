@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameItNowApi", "GameItNowApi\GameItNowApi.csproj", "{053445D8-0850-432C-A7E4-0C13FEF3AE33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameItNowUnitTests", "GameItNowUnitTests\GameItNowUnitTests.csproj", "{8DD41F34-4AF8-43D2-892E-336C7C4F89F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{053445D8-0850-432C-A7E4-0C13FEF3AE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{053445D8-0850-432C-A7E4-0C13FEF3AE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{053445D8-0850-432C-A7E4-0C13FEF3AE33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD41F34-4AF8-43D2-892E-336C7C4F89F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD41F34-4AF8-43D2-892E-336C7C4F89F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD41F34-4AF8-43D2-892E-336C7C4F89F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD41F34-4AF8-43D2-892E-336C7C4F89F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

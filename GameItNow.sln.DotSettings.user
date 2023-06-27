@@ -1,0 +1,11 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/home/codesomehax/.cache/JetBrains/Rider2023.1/resharper-host/temp/Rider/vAny/CoverageData/_GameItNow.-1456068748/Snapshot/snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=312507db_002Dbc75_002D44f5_002D85ff_002Dc4267dd4c90d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CategoryControllerTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::8DD41F34-4AF8-43D2-892E-336C7C4F89F7::net6.0::GameItNowUnitTests.Controllers.CategoryControllerTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::8DD41F34-4AF8-43D2-892E-336C7C4F89F7::net6.0::GameItNowUnitTests.Controllers.GameControllerTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=eef77327_002Dc975_002D4797_002Da9fa_002Dd292c7e28f9f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CategoryControllerTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;ProjectFolder&gt;8DD41F34-4AF8-43D2-892E-336C7C4F89F7/d:Controllers&lt;/ProjectFolder&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

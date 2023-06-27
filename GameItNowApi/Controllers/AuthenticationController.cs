@@ -23,11 +23,11 @@ namespace GameItNowApi.Controllers;
 [ApiController]
 public class AuthenticationController : ControllerBase
 {
-    private readonly AppUserRepository _appUserRepository;
+    private readonly IAppUserRepository _appUserRepository;
     private readonly IConfiguration _configuration;
     private readonly IMapper _mapper;
 
-    public AuthenticationController(AppUserRepository appUserRepository, IConfiguration configuration, IMapper mapper)
+    public AuthenticationController(IAppUserRepository appUserRepository, IConfiguration configuration, IMapper mapper)
     {
         _appUserRepository = appUserRepository;
         _configuration = configuration;
@@ -36,7 +36,7 @@ public class AuthenticationController : ControllerBase
     
     [HttpPost("login")]
     [AllowAnonymous]
-    public async Task<IActionResult> Authenticate(AuthenticationRequest authenticationRequest)
+    public async Task<IActionResult> Login(AuthenticationRequest authenticationRequest)
     {
         AppUser? appUser = await _appUserRepository.FindByUsername(authenticationRequest.Username);
 

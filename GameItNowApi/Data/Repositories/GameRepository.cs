@@ -3,7 +3,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameItNowApi.Data.Repositories;
 
-public class GameRepository : Repository<Game>
+public interface IGameRepository : IRepository<Game>
+{
+    public Task<bool> ExistsByName(string name);
+    public Task<Game?> FindByName(string name, params string[]? includeProperties);
+    public Task<IEnumerable<Game>> FindAllContainingCategory(string categoryName, params string[]? includeProperties);
+    public Task<IEnumerable<Game>> FindCartByAppUserId(int appUserId, params string[]? includeProperties);
+}
+
+public class GameRepository : Repository<Game>, IGameRepository
 {
     public GameRepository(ApiDbContext context) : base(context)
     {

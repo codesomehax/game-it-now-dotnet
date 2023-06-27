@@ -3,7 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameItNowApi.Data.Repositories;
 
-public class CategoryRepository : Repository<Category>
+public interface ICategoryRepository : IRepository<Category>
+{
+    public Task<bool> ExistsByName(string name);
+    public Task<Category?> FindByName(string name, params string[]? include);
+    public Task<IEnumerable<Category>> FindAllByNameIn(IEnumerable<string> categoryNames, params string[]? include);
+}
+
+public class CategoryRepository : Repository<Category>, ICategoryRepository
 {
     public CategoryRepository(ApiDbContext context) : base(context) {}
 

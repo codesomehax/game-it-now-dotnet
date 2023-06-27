@@ -13,11 +13,11 @@ namespace GameItNowApi.Controllers;
 [ApiController]
 public class GameController : ControllerBase
 {
-    private readonly GameRepository _gameRepository;
-    private readonly CategoryRepository _categoryRepository;
+    private readonly IGameRepository _gameRepository;
+    private readonly ICategoryRepository _categoryRepository;
     private readonly IMapper _mapper;
     
-    public GameController(GameRepository gameRepository, CategoryRepository categoryRepository, IMapper mapper)
+    public GameController(IGameRepository gameRepository, ICategoryRepository categoryRepository, IMapper mapper)
     {
         _gameRepository = gameRepository;
         _categoryRepository = categoryRepository;
@@ -25,7 +25,7 @@ public class GameController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> FindAll(string? name, string? category)
+    public async Task<IActionResult> FindAllOrByNameOrByCategory(string? name, string? category)
     {
         if (name != null && category != null)
             return BadRequest();
@@ -33,7 +33,7 @@ public class GameController : ControllerBase
         if (name != null)
         {
             Game? game = await _gameRepository.FindByName(name);
-            return game == null ? NotFound() : Ok(game);
+            return game == null ? NotFound() : Ok(_mapper.Map<GameDto>(game));
         }
 
         if (category != null)
@@ -57,9 +57,7 @@ public class GameController : ControllerBase
     public async Task<IActionResult> AddGame(GameAdditionRequest additionRequest)
     {
         if (await _gameRepository.ExistsByName(additionRequest.Name))
-        {
-            return BadRequest();
-        }
+            return Conflict();
 
         List<Category> categoriesToAssign = (await _categoryRepository.FindAllByNameIn(additionRequest.Categories)).ToList();
 

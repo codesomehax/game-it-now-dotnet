@@ -15,10 +15,10 @@ namespace GameItNowApi.Controllers;
 [ApiController]
 public class AppUserController : ControllerBase
 {
-    private readonly AppUserRepository _appUserRepository;
+    private readonly IAppUserRepository _appUserRepository;
     private readonly IMapper _mapper;
 
-    public AppUserController(AppUserRepository appUserRepository, IMapper mapper)
+    public AppUserController(IAppUserRepository appUserRepository, IMapper mapper)
     {
         _appUserRepository = appUserRepository;
         _mapper = mapper;

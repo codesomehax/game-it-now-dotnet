@@ -2,7 +2,16 @@
 
 namespace GameItNowApi.Data.Repositories;
 
-public abstract class Repository<T> where T : class
+public interface IRepository<T>
+{
+    public Task<IEnumerable<T>> FindAll(params string[]? includeProperties);
+    public Task<T?> Find(int id, params string[]? includeProperties);
+    public Task<T> Add(T entity);
+    public Task Update(T entity);
+    public Task Remove(T entity);
+}
+
+public abstract class Repository<T> : IRepository<T> where T : class
 {
     private readonly ApiDbContext _context;
     
